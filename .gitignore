@@ -6,3 +6,6 @@
 /out/test/classes/
 /.idea/
 /src/test/
+
+application-oauth.properties
+application-real-db.properties
