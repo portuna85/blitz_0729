@@ -5,7 +5,7 @@ jdk:
 branches:
   only:
     - master
-    -
+
 before_install:
   - chmod +x gradlew
 
@@ -18,7 +18,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r blitz *
+  - zip -r blitz ./*
   - mkdir -p deploy
   - mv blitz.zip deploy/blitz.zip
 
