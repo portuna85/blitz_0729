@@ -1,25 +1,9 @@
-<<<<<<< HEAD
 # Project exclude paths
 /.gradle/
 /build/
 /out/
-/out/production/classes/
-/out/test/classes/
 /.idea/
 /src/test/
 
 src/main/resources/application-oauth.properties
 src/main/resources/application-real-db.properties
-=======
-# Created by .ignore support plugin (hsz.mobi)
-
-
-/.gradle/
-/.idea/
-
-
-application-real-oauth.properties
-
-/build/
-/out/
->>>>>>> 89c0ce7 (Initial commit)

@@ -1,17 +1,9 @@
 buildscript {
     ext {
-<<<<<<< HEAD
         springBootVersion = '2.6.5'
     }
     repositories {
         mavenCentral()
-=======
-        springBootVersion = '2.1.9.RELEASE'
-    }
-    repositories {
-        mavenCentral()
-        jcenter()
->>>>>>> 89c0ce7 (Initial commit)
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -24,50 +16,25 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.blitz'
-<<<<<<< HEAD
 version '1.0.1-SNAPSHOT' + new Date().format("yyyyMMddHHmm")
 sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
-=======
-version '1.0.4-SNAPSHOT-'
-sourceCompatibility = 11
-
-repositories {
-    mavenCentral()
-    jcenter()
->>>>>>> 89c0ce7 (Initial commit)
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
-<<<<<<< HEAD
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.session:spring-session-jdbc'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'mysql:mysql-connector-java'
     implementation 'junit:junit:4.13.2'
-    compileOnly 'org.projectlombok:lombok'
-
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    testCompileOnly 'org.springframework.security:spring-security-test'
-
-    //JUnit4 추가
-=======
 
     implementation 'org.slf4j:jcl-over-slf4j'
     implementation 'ch.qos.logback:logback-classic'
-
-    implementation 'mysql:mysql-connector-java'
-
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-    implementation 'org.springframework.session:spring-session-jdbc'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -75,7 +42,6 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
 
     // JUnit4 추가
->>>>>>> 89c0ce7 (Initial commit)
     testImplementation("org.junit.vintage:junit-vintage-engine") {
         exclude group: "org.hamcrest", module: "hamcrest-core"
     }
@@ -83,8 +49,4 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 89c0ce7 (Initial commit)
