@@ -5,6 +5,7 @@
 /out/production/classes/
 /out/test/classes/
 /.idea/
+/src/test/
 
 src/main/resources/application-oauth.properties
 src/main/resources/application-real-db.properties
