@@ -38,7 +38,7 @@ deploy:
     bucket: blitz-springboot-build
     key: blitz.zip
     bundle_type: zip
-    application: blitz-springboot-webservice
+    application: blitz
     deployment_group: blitz-group
     region: ap-northeast-2
 
