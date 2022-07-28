@@ -35,6 +35,7 @@ deploy:
     edge: true
     acl: private # zip 파일 접근을 private 로 막음
     local_dir: deploy # before_deploy 에서 생성한 디렉토리
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo setting에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo setting에 설정된 값
