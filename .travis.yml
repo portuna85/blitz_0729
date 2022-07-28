@@ -38,8 +38,8 @@ deploy:
     bucket: blitz-springboot-build
     key: blitz.zip
     bundle_type: zip
-    application: blitz
-    deployment_group: blitz-group
+    application: blitz-springboot-webservice
+    deployment_group: blitz-springboot-webservice-group
     region: ap-northeast-2
 
 # CI 실행 완료시 메일로 알람
