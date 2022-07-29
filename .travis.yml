@@ -14,7 +14,7 @@ before_install:
 cache:
   directories:
     - '$HOME/.m2/repository'
-    - '$HOMe/.gradle'
+    - '$HOME/.gradle'
 
 script: "./gradlew clean build"
 
@@ -29,7 +29,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings 에 설정된 값
     bucket: blitz-springboot-build # S3 버킷
     region: ap-northeast-2
-    edge: true
+    skip_cleanup: true
     acl: private # zip 파일 접근을 private 으로
     local_dir: deploy
 
@@ -39,8 +39,8 @@ deploy:
     bucket: blitz-springboot-build # S3 버킷
     key: blitz.zip
     bundle_type: zip  # 압축 확장자
-    application: blitz-springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
-    deployment_group: blitz-springboot-webservice-group
+    application: blitz-springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: blitz-springboot-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
 
 # CI 실행 완료시 메일로 알람
