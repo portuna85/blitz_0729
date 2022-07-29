@@ -1,22 +1,21 @@
 package com.blitz.service;
 
 import com.blitz.controller.dto.PostsListResponseDto;
+import com.blitz.controller.dto.PostsResponseDto;
 import com.blitz.controller.dto.PostsSaveRequestDto;
 import com.blitz.controller.dto.PostsUpdateRequestDto;
-import com.blitz.controller.dto.PostsResponseDto;
 import com.blitz.domain.posts.Posts;
 import com.blitz.domain.posts.PostsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
 public class PostsService {
-
     private final PostsRepository postsRepository;
 
     @Transactional
@@ -26,20 +25,27 @@ public class PostsService {
 
     @Transactional
     public Long update(Long id, PostsUpdateRequestDto requestDto) {
-        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id = " + id));
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+
         posts.update(requestDto.getTitle(), requestDto.getContent());
+
         return id;
     }
 
     @Transactional
     public void delete (Long id) {
-        Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+
         postsRepository.delete(posts);
     }
 
     @Transactional(readOnly = true)
     public PostsResponseDto findById(Long id) {
-        Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        Posts entity = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+
         return new PostsResponseDto(entity);
     }
 
@@ -49,5 +55,4 @@ public class PostsService {
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
     }
-
 }
