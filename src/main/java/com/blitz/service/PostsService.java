@@ -55,11 +55,4 @@ public class PostsService {
                 .map(PostsListResponseDto::new)
                 .collect(Collectors.toList());
     }
-
-    @Transactional
-    public int updateView(Long id) {
-        return postsRepository.updateView(id);
-    }
-
-
 }
