@@ -77,10 +77,10 @@ public class PostsApiControllerTest {
                 .content(content)
                 .author("author")
                 .build();
-        String url = "http://localhost:" + port + "/api/v1/posts";
+        String url = "http://localhost:" + port + "/api/posts";
         // when
         mvc.perform(post(url)
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 
@@ -109,11 +109,11 @@ public class PostsApiControllerTest {
                 .content(expectedContent)
                 .build();
 
-        String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
+        String url = "http://localhost:" + port + "/api/posts/" + updateId;
 
         //when
         mvc.perform(put(url)
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
 
