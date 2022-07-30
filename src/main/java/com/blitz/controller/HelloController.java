@@ -1,6 +1,7 @@
 package com.blitz.controller;
 
 import com.blitz.controller.dto.HelloResponseDto;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,5 +19,4 @@ public class HelloController {
                                      @RequestParam("amount") int amount) {
         return new HelloResponseDto(name, amount);
     }
-
 }
