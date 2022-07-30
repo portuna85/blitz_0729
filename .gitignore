@@ -3,7 +3,7 @@
 /build/
 /out/
 /.idea/
-/.note/
+/.note/error.log
 
 application-oauth.properties
 application-real-db.properties
