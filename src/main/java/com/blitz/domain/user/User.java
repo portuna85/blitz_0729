@@ -1,11 +1,15 @@
 package com.blitz.domain.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.blitz.domain.BaseTimeEntity;
+import com.blitz.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -14,6 +18,7 @@ public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     @Column(nullable = false)
@@ -28,6 +33,10 @@ public class User extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Posts> posts = new ArrayList<>();
 
     @Builder
     public User(String name, String email, String picture, Role role) {
