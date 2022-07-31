@@ -5,11 +5,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-.note/
-out/
-.idea/
-.note/
+out
+.idea
+.note
 
+application.properties
 application-oauth.properties
 application-real-db.properties
-application.properties
