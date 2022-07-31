@@ -13,15 +13,13 @@ import javax.persistence.*;
 @Entity
 public class Posts extends BaseTimeEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "posts_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-
 
     @Column(length = 500, nullable = false)
     private String title;
@@ -30,8 +28,6 @@ public class Posts extends BaseTimeEntity {
     private String content;
 
     private String author;
-
-
 
     @Builder
     public Posts(String title, String content, String author) {
